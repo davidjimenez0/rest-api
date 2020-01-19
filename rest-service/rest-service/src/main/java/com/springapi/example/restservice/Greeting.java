@@ -1,4 +1,4 @@
-package model;
+package com.springapi.example.restservice;
 
 public class Greeting {
 
