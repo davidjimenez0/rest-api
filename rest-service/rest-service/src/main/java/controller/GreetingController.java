@@ -14,7 +14,12 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/greeting")
-    public Greeting greeting(@RequestParam(value = "name",defaultValue = "world"),String name){
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    public Greeting greeting(@RequestParam(value = "name") String name){
+        return new Greeting(counter.incrementAndGet(), name);
     }
+
+    /*
+    the @GetMapping annotation maps the GET /greeting to the method greeting
+    the @Request param takes the input value and gives it to the String name variable
+     */
 }
